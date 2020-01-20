@@ -1,0 +1,18 @@
+# Mutual-Friends
+Instructions
+1. Create a jar file to run it on Hadoop
+2. Upload the input files(socialdata.txt and userdata.txt) to the input folder of Hadoop using the following command
+	hdfs dfs -put <location of file> <location of input directory on Hadoop>
+3. Run the jar file with the following command
+	hadoop jar <location of the jar> <Classname> <input location> <output location>
+Eg: Hadoop jar MutualFriends.jar MutualFriends /user/<user-name>/input/socialdata.txt /user/<user-name>/input/userdata.txt /user/<user-name>/out
+The first argument is the location of socialdata.txt. The second argument is the location of userdata.txt. The third argument is the output path
+4. Run the following command to download the output
+	hdfs dfs -get /user/<user-name>/out
+5. In the output folder, there are 4 folders. Each folder is the output of a question.
+q1- Output of Q1
+q2- Output of Q2
+q3- Output of Q3
+q4- Output of Q4
+6. If you want to run the program again, we must use a different name for the output or delete the old folder by using the command
+	hdfs dfs -rm -r /user/<user-name>/out
